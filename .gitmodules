@@ -1,3 +1,0 @@
-[submodule "cpp-netlib"]
-	path = cpp-netlib
-	url = git://github.com/glynos/cpp-netlib.git
