@@ -1,3 +1,0 @@
-[submodule "cpp-netlib"]
-	path = cpp-netlib
-	url = git@github.com:mclark4386/cpp-netlib.git
