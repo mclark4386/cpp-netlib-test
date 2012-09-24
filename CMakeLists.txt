@@ -17,8 +17,12 @@ if (${CMAKE_CXX_COMPILER_ID} MATCHES GNU)
   endif()
 endif()
 
+FIND_PACKAGE(Boost)
 
-include_directories(cpp-netlib/include)
-link_directories(cpp-netlib/lib)
+IF(Boost_FOUND)
+	include_directories(cpp-netlib/include ${Boost_INCLUDE_DIR})
+	link_directories(${CMAKE_CURRENT_SOURCE_DIR}/cpp-netlib/libs/network/src ${Boost_LIBRARYDIR})
 
-add_executable(server main.cpp) 
+	add_executable(server main.cpp) 
+	target_link_libraries(server cppnetlib-uri cppnetlib-server-parsers cppnetlib-client-connections)
+ENDIF()
